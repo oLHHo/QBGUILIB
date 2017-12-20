@@ -1,4 +1,5 @@
 #include "LeonWgt.h"
+#include "../QBGUILIB/LCommon.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -6,15 +7,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     LeonWgt w;
 
-    QFile file(":/Data/Css/blue_1.css");
-    file.open(QFile::ReadOnly);
-    QString qss = QLatin1String(file.readAll());
-    qApp->setStyleSheet(qss);
-    qApp->setPalette(QPalette(QColor("#F0F0F0")));
-
-    QTranslator *translator = new QTranslator(qApp);
-    translator->load("qt_zh_CN.qm");
-    qApp->installTranslator(translator);
+    // 初始界面样式
+    LCommon::SetStyle("blue_1");
+    // 中文翻译
+    LCommon::SetChinese("qt_zh_CN");
 
     w.show();
 
