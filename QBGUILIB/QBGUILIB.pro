@@ -18,7 +18,8 @@ SOURCES += LDrawWgt.cpp \
 HEADERS += LDrawWgt.h\
         qbguilib_global.h \
     IconHelper.h \
-    LDrawFilterWgt.h
+    LDrawFilterWgt.h \
+    LCommon.h
 
 unix {
     target.path = /usr/lib
